@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Demand">
+
+    <select id="addDemand" resultType="int" parameterType="com.comic.www.pojo.requestparam.DemandParam">
+        insert into demand
+        values
+        (null, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{demandContent,jdbcType=VARCHAR}, now())
+    </select>
+
+
+</mapper>

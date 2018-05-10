@@ -20,7 +20,7 @@ import lombok.Data;
 @ApiModel(value = "Result", description = "统一返回实体")
 public class Result<T> {
 
-    @ApiModelProperty(value = "状态码", required = true)
+    @ApiModelProperty(value = "状态码:0-正常；其它-异常;", required = true)
     private int code = ConstantUtils.ErrorCode.ERROR_OK;
 
     @ApiModelProperty(value = "返回说明", required = true)
