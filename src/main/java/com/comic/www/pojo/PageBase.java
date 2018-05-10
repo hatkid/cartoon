@@ -12,9 +12,9 @@ import lombok.Data;
 public class PageBase {
 
     @ApiModelProperty(value = "每页数据量", required = true)
-    private int pageSize;
+    private int pageSize = 1;
 
     @ApiModelProperty(value = "页码", required = true)
-    private int pageNo;
+    private int pageNo = 1;
 
 }

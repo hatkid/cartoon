@@ -2,9 +2,22 @@ package com.comic.www.service.impl;
 
 
 import com.comic.www.dao.MybatisDAO;
+import com.comic.www.pojo.CommonPageListWithoutTotal;
+import com.comic.www.pojo.Result;
+import com.comic.www.pojo.requestparam.NewsParam;
+import com.comic.www.pojo.requestparam.NewsPreAndNextParam;
+import com.comic.www.pojo.responseparam.News;
 import com.comic.www.service.NewsService;
+import com.comic.www.utils.ConstantUtils;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @文件名：NewsServiceImpl.java
@@ -19,4 +32,59 @@ public class NewsServiceImpl implements NewsService {
     @Autowired
     MybatisDAO mybatisDAO;
 
+    /**
+     * @函数介绍：新闻列表
+     * @参数 null
+     * @返回值：
+     */
+    @Override
+    public Result getNewsList(NewsParam newsParam) {
+        Result result = new Result();
+        if (newsParam == null) {
+            result.setCode(ConstantUtils.ErrorCode.ERROR_FAILE);
+            result.setMsg("参数异常");
+        }
+        Page page = PageHelper.startPage(newsParam.getPageNo(),newsParam.getPageSize());
+        List<News> newList = mybatisDAO.getList("News.getNewsList", newsParam);
+        Map<String,Object> retMap = new HashMap<>();
+        retMap.put("totalCount",page.getTotal());
+        retMap.put("data", newList);
+        result.setData(retMap);
+        return result;
+    }
+
+    /**
+     * @函数介绍：翻页接口
+     * @参数
+     * @返回值：
+     */
+    @Override
+    public Result<CommonPageListWithoutTotal<News>> getPageList(NewsPreAndNextParam newsPreAndNextParam) {
+        Result result = new Result();
+        if (StringUtils.isEmpty(newsPreAndNextParam.getId())) {
+            result.setCode(ConstantUtils.ErrorCode.ERROR_FAILE);
+            result.setMsg("参数异常");
+            return result;
+        }
+        newsPreAndNextParam.setOrder("desc");
+        newsPreAndNextParam.setOperator("<");
+        News preNew = mybatisDAO.get("News.getPage", newsPreAndNextParam);
+        Map<String, Object> retMap = new HashMap<>();
+        if ( preNew != null ) {
+            retMap.put("pre", preNew);
+        }
+        newsPreAndNextParam.setOrder("asc");
+        newsPreAndNextParam.setOperator(">");
+        News nextNew = mybatisDAO.get("News.getPage", newsPreAndNextParam);
+        if ( nextNew != null ) {
+            retMap.put("next", nextNew);
+        }
+        if ( retMap.size() > 0 ){
+            result.setData(retMap);
+        } else {
+            result.setCode(ConstantUtils.ErrorCode.ERROR_FAILE);
+            result.setMsg("无数据");
+        }
+        return result;
+    }
 }

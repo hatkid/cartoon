@@ -18,7 +18,7 @@ import lombok.Data;
  */
 @Data
 @ApiModel(value = "Result", description = "统一返回实体")
-public class Result {
+public class Result<T> {
 
     @ApiModelProperty(value = "状态码", required = true)
     private int code = ConstantUtils.ErrorCode.ERROR_OK;
@@ -27,6 +27,6 @@ public class Result {
     private String msg = "success";
 
     @ApiModelProperty(value = "返回数据", required = true)
-    private Object data;
+    private T data;
 
 }
