@@ -68,17 +68,24 @@ public class NewsServiceImpl implements NewsService {
         }
         newsPreAndNextParam.setOrder("desc");
         newsPreAndNextParam.setOperator("<");
-        News preNew = mybatisDAO.get("News.getPage", newsPreAndNextParam);
+        News preNews = mybatisDAO.get("News.getPage", newsPreAndNextParam);
         Map<String, Object> retMap = new HashMap<>();
-        if ( preNew != null ) {
-            retMap.put("pre", preNew);
+        if ( preNews != null ) {
+            retMap.put("pre", preNews);
         }
         newsPreAndNextParam.setOrder("asc");
         newsPreAndNextParam.setOperator(">");
-        News nextNew = mybatisDAO.get("News.getPage", newsPreAndNextParam);
-        if ( nextNew != null ) {
-            retMap.put("next", nextNew);
+        News nextNews = mybatisDAO.get("News.getPage", newsPreAndNextParam);
+        if ( nextNews != null ) {
+            retMap.put("next", nextNews);
         }
+        newsPreAndNextParam.setOrder("asc");
+        newsPreAndNextParam.setOperator("=");
+        News currentNew = mybatisDAO.get("News.getPage", newsPreAndNextParam);
+        if ( currentNew != null ) {
+            retMap.put("current", currentNew);
+        }
+
         if ( retMap.size() > 0 ){
             result.setData(retMap);
         } else {
