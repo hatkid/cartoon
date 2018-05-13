@@ -1,10 +1,7 @@
 package com.comic.www.controller;
 
-import com.comic.www.pojo.CommonPageListWithoutTotal;
 import com.comic.www.pojo.Result;
 import com.comic.www.pojo.requestparam.DemandParam;
-import com.comic.www.pojo.requestparam.NewsParam;
-import com.comic.www.pojo.responseparam.News;
 import com.comic.www.service.DemandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
