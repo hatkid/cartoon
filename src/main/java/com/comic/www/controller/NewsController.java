@@ -22,13 +22,13 @@ public class NewsController {
     NewsService newsService;
 
     @ApiOperation(value = "新闻列表获取接口", notes = "新闻列表获取接口")
-    @RequestMapping(value = "/getNewsList", method = RequestMethod.POST)
+    @RequestMapping(value = "/getNewsList", method = RequestMethod.POST, produces = "application/json")
     public Result<CommonPageListWithoutTotal<News>> getNewsList(@RequestBody NewsParam newsParam){
         return newsService.getNewsList(newsParam);
     }
 
     @ApiOperation(value = "翻页接口", notes = "翻页接口")
-    @RequestMapping(value = "/getPreAndNextNewsList", method = RequestMethod.POST)
+    @RequestMapping(value = "/getPreAndNextNewsList", method = RequestMethod.POST,produces = "application/json")
     public Result<CommonPageListWithoutTotal<News>> getPreAndNextNewsList(@RequestBody NewsPreAndNextParam newsPreAndNextParam){
         return newsService.getPageList(newsPreAndNextParam);
     }

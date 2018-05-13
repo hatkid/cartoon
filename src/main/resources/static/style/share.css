@@ -1,0 +1,97 @@
+
+/*分享到*/
+.cnt_share{height:63px; position:relative; z-index:9999}
+
+.cnt_share .icon{color:#333;float:left;margin:22px 0 0 19px;position:relative;width:198px; z-index:999}
+.cnt_share .icon a{background:url(../image/share_ico.png) no-repeat;display:inline-block;height:25px;margin-left:5px;position:absolute;top:0px;width:25px;}
+.cnt_share .icon a.ico1{background-position: 0 -8px;right:120px;}
+.cnt_share .icon a.ico2{background-position: 0 -48px;right:90px;}
+.cnt_share .icon a.ico3{background-position: 0 -87px;right:60px;}
+.cnt_share .icon a.ico4{background-position: 0 -127px;right:30px;}
+.cnt_share .icon a.ico5{background-position: 0 -166px;right:0px;}
+.cnt_share .icon a:hover{background:url(../image/share_ico_hover.png) no-repeat;}
+.cnt_share .icon a.ico1:hover{background-position: 0 -8px;}
+.cnt_share .icon a.ico2:hover{background-position: 0 -48px;}
+.cnt_share .icon a.ico3:hover{background-position: 0 -87px;}
+.cnt_share .icon a.ico4:hover{background-position: 0 -127px;}
+.cnt_share .icon a.ico5:hover{background-position: 0 -166px;}
+
+.cnt_share .slideDown_sub{position:absolute; left:127px; top:23px;  display:inline-block;*display:inline; zoom:1; width:122px; vertical-align:middle; z-index:888}
+.cnt_share .slideDown_sub .share{color:#333;cursor:pointer;display:block;font-size:14px;font-weight:bold; width:26px; height:26px; float:right; margin-right:3px;}
+.cnt_share .slideDown_sub .share b{border:solid 5px #fff;border-top-color:#757575;display:block;height:0;overflow:hidden;position:absolute;right:12px;top:12px;
+-webkit-transition:top 1s,all 0.3s ease-in 0s;
+-moz-transition:top 1s,all 0.3s ease-in 0s;
+-o-transition:top 1s,all 0.3s ease-in 0s;
+transition:top 1s,all 0.3s ease-in 0s;
+}
+.cnt_share .slideDown_sub .selectBox_sub{background:#fff; display:none; position:absolute; right:0px; top:40px; z-index:999; width:120px; border:1px solid #e2e2e2;box-shadow:0 0 2px 2px #eaeaea; }
+.cnt_share .slideDown_sub .selectBox_sub a{background-image:none;border-top:1px solid #fff;border-bottom:none;color:#848484;display:block; font:12px/39px "Arial";height:39px;padding-left:45px;overflow:hidden;}
+.cnt_share .slideDown_sub .selectBox_sub a:hover{ color:#535353; text-decoration:none}
+.cnt_share .slideDown_sub .selectBox_sub a.ico01{ background:url(../image/share_ico.png) no-repeat 12px -1px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico02{ background:url(../image/share_ico.png) no-repeat 12px -39px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico03{ background:url(../image/share_ico.png) no-repeat 12px -79px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico04{ background:url(../image/share_ico.png) no-repeat 12px -119px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico05{ background:url(../image/share_ico.png) no-repeat 12px -158px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico06{ background:url(../image/share_ico2.png) no-repeat 12px 6px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico07{ background:url(../image/share_ico2.png) no-repeat 12px -34px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico08{ background:url(../image/share_ico2.png) no-repeat 12px -74px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico09{ background:url(../image/share_ico2.png) no-repeat 12px -114px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico10{ background:url(../image/share_ico2.png) no-repeat 12px -155px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico01:hover{ background:url(../image/share_ico_hover.png) no-repeat 12px -1px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico02:hover{ background:url(../image/share_ico_hover.png) no-repeat 12px -39px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico03:hover{ background:url(../image/share_ico_hover.png) no-repeat 12px -79px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico04:hover{ background:url(../image/share_ico_hover.png) no-repeat 12px -119px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico05:hover{ background:url(../image/share_ico_hover.png) no-repeat 12px -159px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico06:hover{ background:url(../image/share_ico_hover2.png) no-repeat 12px 6px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico07:hover{ background:url(../image/share_ico_hover2.png) no-repeat 12px -34px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico08:hover{ background:url(../image/share_ico_hover2.png) no-repeat 12px -74px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico09:hover{ background:url(../image/share_ico_hover2.png) no-repeat 12px -114px}
+.cnt_share .slideDown_sub .selectBox_sub a.ico10:hover{ background:url(../image/share_ico_hover2.png) no-repeat 12px -155px}
+.cnt_share .slideCur_sub{ display:block;}
+.cnt_share .slideCur_sub .share{}
+.cnt_share .slideCur_sub .share b{border:solid 5px #fff;border-top-color:#1e63b0;top:6px;border-top-color:#f5f5f5\9;border-bottom:solid 6px #1e63b0\9;
+-webkit-transform:rotate(180deg);
+-moz-transform:rotate(180deg);
+-o-transform:rotate(180deg);
+transform:rotate(180deg);
+}
+
+.cnt_share .icon em{display:inline-block;font-weight:normal;line-height:25px;font-style: normal;font-size: 14px;}
+.cnt_share .icon b{border:solid 5px #ededed;border-top-color:#757575;display:block;height:0;overflow:hidden;position:absolute;right:-20px;top:13px;}
+
+
+@keyframes mymove
+{
+0% {top:9px;}
+50% {top:13px;}
+100%{top:9px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+0% {top:9px;}
+50% {top:13px;}
+100%{top:9px;}
+}
+
+
+@-webkit-keyframes mymove /* Safari 和 Chrome */
+{
+0%   {top:9px;}
+50%  {top:13px;}
+100% {top:9px;}
+}
+@-o-keyframes mymove /* Opera */
+{
+0% {top:9px;}
+50% {top:13px;}
+100%{top:9px;}
+}
+
+
+
+
+
+
+
+
